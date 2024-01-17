@@ -4,14 +4,18 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pages
-import Alunos from "../src/Pages/Alunos";
+import Login from "./Pages/Login/Login";
+import Alunos from "./Pages/Alunos/Alunos";
+import NovoAluno from "./Pages/NovoAluno/NovoAluno";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Alunos />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/alunos" element={<Alunos />} />
+          <Route path="alunos/aluno/novo/:alunoId" element={<NovoAluno />} />
         </Routes>
       </BrowserRouter>
     </div>

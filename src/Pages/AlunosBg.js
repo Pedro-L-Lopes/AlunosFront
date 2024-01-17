@@ -105,6 +105,7 @@ const Alunos = () => {
     });
   };
 
+  
   useEffect(() => {
     if (updateData) {
       pedidoGet();
@@ -115,7 +116,7 @@ const Alunos = () => {
   return (
     <div className="App">
       <br />
-      <h1>Cadastro de Alunos</h1>
+      <h1>Cadastro de Alunos</h1> 
       <header>
         <img className="App-logo" src={LogoCadastro} alt="Logo do cadastro" />
         <button className="btn btn-success" onClick={() => abrirFecharModal()}>
