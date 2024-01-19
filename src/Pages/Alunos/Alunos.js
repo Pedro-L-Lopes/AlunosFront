@@ -16,8 +16,10 @@ import logoCadastro from "../../Assets/Images/cadastro.png";
 const Alunos = () => {
   const navigate = useNavigate();
 
-  const [nome, setNome] = useState("");
   const [alunos, setAlunos] = useState([]);
+
+  const [searchInput, SetSearchInput] = useState("");
+  const [filter, setFilter] = useState("");
 
   const email = localStorage.getItem("email");
   const token = localStorage.getItem("token");
@@ -26,6 +28,22 @@ const Alunos = () => {
     headers: {
       Authorization: `Bearer ${token}`,
     },
+  };
+
+  const searchAlunos = (searchValue) => {
+    SetSearchInput(searchValue);
+
+    if (searchInput !== "") {
+      const dadosFiltrados = alunos.filter((item) => {
+        return Object.values(item)
+          .join("")
+          .toLowerCase()
+          .includes(searchInput.toLocaleLowerCase());
+      });
+      setFilter(dadosFiltrados);
+    } else {
+      setFilter(alunos);
+    }
   };
 
   const logout = async () => {
@@ -48,6 +66,17 @@ const Alunos = () => {
     }
   };
 
+  const deleteAluno = async (id) => {
+    try {
+      if (window.confirm(`Deseja excluir o aluno de id: ${id} ?`)) {
+        await api.delete(`/alunos/${id}`, authorization);
+        setAlunos(alunos.filter((aluno) => aluno.id !== id));
+      }
+    } catch (error) {
+      alert("Não foi possivel excluir o aluno " + error);
+    }
+  };
+
   useEffect(() => {
     api.get("alunos", authorization).then((response) => {
       setAlunos(response.data);
@@ -63,28 +92,48 @@ const Alunos = () => {
         <FiXCircle size={35} color="red" onClick={logout} />
       </button>
       <form>
-        <input type="text" placeholder="Nome" />
-        <button type="button" className="button">
-          Filtrar aluno por nome
-        </button>
+        <input
+          type="text"
+          placeholder="Filtrar por nome..."
+          onChange={(e) => searchAlunos(e.target.value)}
+        />
       </form>
       <h1>Relação de alunos</h1>
-      <ul>
-        {alunos.map((aluno) => (
-          <li key={aluno.id}>
-            <b>Nome: </b> {aluno.nome} <br />
-            <b>Email: </b> {aluno.email} <br />
-            <b>Idade: </b> {aluno.idade}
-            <br />
-            <button type="button" onClick={() => editAluno(aluno.id)}>
-              <FiEdit size={35} color="red" />
-            </button>
-            <button type="button">
-              <FiUserX size={35} color="red" />
-            </button>
-          </li>
-        ))}
-      </ul>
+      {searchInput.length > 1 ? (
+        <ul>
+          {filter.map((aluno) => (
+            <li key={aluno.id}>
+              <b>Nome: </b> {aluno.nome} <br />
+              <b>Email: </b> {aluno.email} <br />
+              <b>Idade: </b> {aluno.idade}
+              <br />
+              <button type="button" onClick={() => editAluno(aluno.id)}>
+                <FiEdit size={35} color="red" />
+              </button>
+              <button type="button" onClick={() => deleteAluno(aluno.id)}>
+                <FiUserX size={35} color="red" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul>
+          {alunos.map((aluno) => (
+            <li key={aluno.id}>
+              <b>Nome: </b> {aluno.nome} <br />
+              <b>Email: </b> {aluno.email} <br />
+              <b>Idade: </b> {aluno.idade}
+              <br />
+              <button type="button" onClick={() => editAluno(aluno.id)}>
+                <FiEdit size={35} color="red" />
+              </button>
+              <button type="button" onClick={() => deleteAluno(aluno.id)}>
+                <FiUserX size={35} color="red" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
