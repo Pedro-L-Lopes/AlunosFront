@@ -40,6 +40,14 @@ const Alunos = () => {
     }
   };
 
+  const editAluno = async (id) => {
+    try {
+      navigate(`/novo/${id}`);
+    } catch (error) {
+      alert("Não foi possivel editar o aluno.");
+    }
+  };
+
   useEffect(() => {
     api.get("alunos", authorization).then((response) => {
       setAlunos(response.data);
@@ -50,7 +58,7 @@ const Alunos = () => {
     <div className="alunos-container">
       <h1>Olá {email}</h1>
       <img src={logoCadastro} alt="Logo do cadastro" />
-      <Link to="aluno/novo/0">Novo Aluno</Link>
+      <Link to="/novo/0">Novo Aluno</Link>
       <button type="button">
         <FiXCircle size={35} color="red" onClick={logout} />
       </button>
@@ -68,7 +76,7 @@ const Alunos = () => {
             <b>Email: </b> {aluno.email} <br />
             <b>Idade: </b> {aluno.idade}
             <br />
-            <button type="button">
+            <button type="button" onClick={() => editAluno(aluno.id)}>
               <FiEdit size={35} color="red" />
             </button>
             <button type="button">
