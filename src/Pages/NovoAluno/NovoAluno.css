@@ -1,0 +1,135 @@
+@media screen and (max-width: 600px) {
+  .novo-aluno-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .novo-aluno-container .content {
+    width: 100%;
+    padding: 32px;
+    background: #f0f0f5;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .novo-aluno-container .content section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+
+  .novo-aluno-container section.form {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+  }
+
+  .novo-aluno-container section.form img {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .novo-aluno-container .content section h1 {
+    margin: 32px 0 16px;
+    font-size: 24px;
+  }
+
+  .novo-aluno-container .content section p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .novo-aluno-container .content form {
+    width: 100%;
+    max-width: none;
+  }
+
+  .novo-aluno-container .content form input {
+    margin-top: 16px;
+  }
+}
+
+.novo-aluno-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.novo-aluno-container .content {
+  width: 100%;
+  padding: 96px;
+  background: #f0f0f5;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.novo-aluno-container .content section {
+  width: 100%;
+  max-width: 380px;
+}
+
+.novo-aluno-container section.form {
+  width: 100%;
+  max-width: 350px;
+  margin-right: 30px;
+}
+
+.novo-aluno-container section.form img {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.novo-aluno-container .content section h1 {
+  margin: 64px 0 32px;
+  font-size: 32px;
+}
+
+.novo-aluno-container .content section p {
+  font-size: 18px;
+  color: #737380;
+  line-height: 32px;
+}
+
+.novo-aluno-container .content form {
+  width: 100%;
+  max-width: 450px;
+}
+
+.novo-aluno-container .content form input {
+  margin-top: 8px;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}

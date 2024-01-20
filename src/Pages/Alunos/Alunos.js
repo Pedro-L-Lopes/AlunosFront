@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // Icons
-import { FiXCircle, FiEdit, FiUserX } from "react-icons/fi";
+import { FiLogIn, FiEdit, FiUserX } from "react-icons/fi";
 
 // Images
 import logoCadastro from "../../Assets/Images/cadastro.png";
@@ -84,13 +84,22 @@ const Alunos = () => {
   }, []);
 
   return (
-    <div className="alunos-container">
-      <h1>Olá {email}</h1>
-      <img src={logoCadastro} alt="Logo do cadastro" />
-      <Link to="/novo/0">Novo Aluno</Link>
-      <button type="button">
-        <FiXCircle size={35} color="red" onClick={logout} />
-      </button>
+    <div className="aluno-container ">
+      <header>
+        <div>
+          <img src={logoCadastro} alt="Logo do cadastro" />
+          <button type="button">
+            <FiLogIn size={35} color="#17202a" onClick={logout} />
+          </button>
+        </div>
+        <span>
+          Bem-Vindo, <strong>{email}</strong>!
+        </span>
+        <Link className="button" to="/novo/0">
+          Novo Aluno
+        </Link>
+      </header>
+
       <form>
         <input
           type="text"
@@ -98,20 +107,29 @@ const Alunos = () => {
           onChange={(e) => searchAlunos(e.target.value)}
         />
       </form>
+
       <h1>Relação de alunos</h1>
       {searchInput.length > 1 ? (
         <ul>
           {filter.map((aluno) => (
             <li key={aluno.id}>
-              <b>Nome: </b> {aluno.nome} <br />
-              <b>Email: </b> {aluno.email} <br />
-              <b>Idade: </b> {aluno.idade}
+              <b>Nome:</b>
+              {aluno.nome}
+              <br />
+              <br />
+              <b>Email:</b>
+              {aluno.email}
+              <br />
+              <br />
+              <b>Idade:</b>
+              {aluno.idade}
+              <br />
               <br />
               <button type="button" onClick={() => editAluno(aluno.id)}>
-                <FiEdit size={35} color="red" />
+                <FiEdit size={25} color="#17202a" />
               </button>
               <button type="button" onClick={() => deleteAluno(aluno.id)}>
-                <FiUserX size={35} color="red" />
+                <FiUserX size={25} color="#17202a" />
               </button>
             </li>
           ))}
@@ -120,15 +138,25 @@ const Alunos = () => {
         <ul>
           {alunos.map((aluno) => (
             <li key={aluno.id}>
-              <b>Nome: </b> {aluno.nome} <br />
-              <b>Email: </b> {aluno.email} <br />
-              <b>Idade: </b> {aluno.idade}
+              <b>Nome:</b>
+              {aluno.nome}
               <br />
+              <br />
+              <b>Email:</b>
+              {aluno.email}
+              <br />
+              <br />
+              <b>Idade:</b>
+              {aluno.idade}
+              <br />
+              <br />
+
               <button type="button" onClick={() => editAluno(aluno.id)}>
-                <FiEdit size={35} color="red" />
+                <FiEdit size={25} color="#17202a" />
               </button>
+
               <button type="button" onClick={() => deleteAluno(aluno.id)}>
-                <FiUserX size={35} color="red" />
+                <FiUserX size={25} color="#17202a" />
               </button>
             </li>
           ))}

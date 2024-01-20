@@ -9,7 +9,7 @@ import logoImage from "../../Assets/Images/login.png";
 
 // Hooks
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -61,6 +61,14 @@ const Login = () => {
           <button className="button" type="submit">
             Login
           </button>
+
+          <Link
+            className="footer"
+            to="https://github.com/Pedro-L-Lopes"
+            target="_blank"
+          >
+            Criar Conta / Ajuda
+          </Link>
         </form>
       </section>
     </div>

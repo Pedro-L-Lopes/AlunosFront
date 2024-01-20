@@ -76,13 +76,10 @@ const NovoAluno = () => {
   return (
     <div className="novo-aluno-container">
       <div className="content">
-        <FiUserPlus size={105} color="red" />
-        <h1>{alunoId === "0" ? "Adicionar novo aluno" : "Editar aluno"}</h1>
-        <Link className="back-link" to="/alunos">
-          <FiCornerDownLeft size={25} color="red" />
-          Voltar
-        </Link>
-        <section className="form"></section>
+        <section className="form">
+          <FiUserPlus size={105} color="#17202a" />
+          <h1>{alunoId === "0" ? "Adicionar novo aluno" : "Editar aluno"}</h1>
+        </section>
         <form onSubmit={saveOrUpdate}>
           <input
             type="text"
@@ -106,6 +103,10 @@ const NovoAluno = () => {
             {alunoId === "0" ? "Adicionar" : "Editar"}
           </button>
         </form>
+        <Link className="back-link" to="/alunos">
+          <FiCornerDownLeft size={25} color="#17202a" />
+          Voltar
+        </Link>
       </div>
     </div>
   );
