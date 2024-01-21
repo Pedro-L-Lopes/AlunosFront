@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AlunosFront/static/css/main.f310482c.css",
+    "main.js": "/AlunosFront/static/js/main.8bb794cd.js",
+    "static/media/cadastro.png": "/AlunosFront/static/media/cadastro.dc5d257bd1dbe7891d1e.png",
+    "index.html": "/AlunosFront/index.html",
+    "main.f310482c.css.map": "/AlunosFront/static/css/main.f310482c.css.map",
+    "main.8bb794cd.js.map": "/AlunosFront/static/js/main.8bb794cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f310482c.css",
+    "static/js/main.8bb794cd.js"
+  ]
+}
