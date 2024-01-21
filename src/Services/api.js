@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://localhost:7065/api/",
+  baseURL: "https://alunosapi.azurewebsites.net/api/",
 });
 
 export default api;
