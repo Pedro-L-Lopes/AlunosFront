@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/AlunosFront/static/css/main.f310482c.css",
-    "main.js": "/AlunosFront/static/js/main.242211f2.js",
+    "main.js": "/AlunosFront/static/js/main.7add21d9.js",
     "static/media/cadastro.png": "/AlunosFront/static/media/cadastro.dc5d257bd1dbe7891d1e.png",
     "index.html": "/AlunosFront/index.html",
     "main.f310482c.css.map": "/AlunosFront/static/css/main.f310482c.css.map",
-    "main.242211f2.js.map": "/AlunosFront/static/js/main.242211f2.js.map"
+    "main.7add21d9.js.map": "/AlunosFront/static/js/main.7add21d9.js.map"
   },
   "entrypoints": [
     "static/css/main.f310482c.css",
-    "static/js/main.242211f2.js"
+    "static/js/main.7add21d9.js"
   ]
 }
