@@ -1,6 +1,6 @@
 <h3>Este é um frontend com React que consome uma API em .NET 6 com autenticação JWT (hospedado na Azure) e um banco de dados MySql (hospedado na Railway)</h3>
 
-backend: https://github.com/Pedro-L-Lopes/AlunosApi
+backend: https://github.com/Pedro-L-Lopes/AlunosApi </br>
 Link da apliação: https://pedro-l-lopes.github.io/AlunosFront/ </br>
 Usuário de acesso: usuario@user.com </br>
 Senha de acesso: User12# </br>
